@@ -1,24 +1,15 @@
-const botaoAlterarTema = document.getElementById("botao-alterar-tema");
-
+const botaoalterartema = document.getElementById("botao-alterar-tema");
 const body = document.querySelector("body");
+const imagembotatrocadetema = document.querySelector(".imagem-botao")
 
-const ImagemBotaoTrocaDeTema = document.querySelector(".imagem-botao")
+botaoalterartema.addEventListener("click", () => {
+    const modoescuroestaativo = body.classList.contains("modo-escuro")
 
-botaoAlterarTema.addEventListener("click", () =>{
-    console.log("diabo");
-    const modoEscuroEstaAtivo = body.classList.contains("modo-escuro")
-    
-    body.classList.toggle("modo-escuro");
-    
-    if(modoEscuroEstaAtivo) {
-        
-        ImagemBotaoTrocaDeTema.setAttribute("src" , "./src/imagens/sun.png");
+    body.classList.toggle("modo-escuro")
 
-    } else { 
-        
-
-    ImagemBotaoTrocaDeTema.setAttribute("src" , "./src/imagens/moon.png");
-
+    if (modoescuroestaativo) {
+        imagembotatrocadetema.setAttribute("src", "./src/imagens/sun.png")
+    } else {
+        imagembotatrocadetema.setAttribute("src", "./src/imagens/moon.png")
     }
-    
 });
